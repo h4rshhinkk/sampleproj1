@@ -1,0 +1,162 @@
+
+.navbar{
+    position: sticky;
+    top: 0%;
+    z-index: 10;
+}
+
+
+.navbar-brand{
+    font-family: "Audiowide", sans-serif;
+    text-decoration: none;
+}
+
+.nav-item{
+    margin-left: 20px;
+}
+
+.top-header{
+    /* background-image: linear-gradient(to right, #3e5151, #decba4); */
+    /* background-image: linear-gradient(to right, #fc466b, #3f5efb); */
+    background: linear-gradient(to right, #c94b4b, #4b134f);
+}
+
+
+
+.nav-link{
+    color: rgb(255, 255,255,.5);
+}
+
+.nav-link:hover{
+    color: #f5f5fa;
+}
+
+
+
+.btn-login{
+    margin-left: 562px;
+}
+
+/* .userbtn{
+    font-size: 30px;
+    color: rgb(255, 255,255,.5);
+    text-decoration: none;
+} */
+
+
+
+
+/* userprofile DROPdown start */
+
+.profiledropdwn .nav-item{
+    list-style: none;
+    margin-left: 0px;
+    font-size: 20px;
+    position: relative;
+}
+
+.profiledropdwn img{
+    margin-top: 7px;
+    width: 60px;
+    border-radius: 50%;
+    margin-left: 28px;
+    vertical-align: middle;
+    
+}
+
+.profiledropdwn ul li{
+    list-style: none;
+}
+
+.profiledropdwn .userdrop{
+    margin-top: 15px;
+}
+
+.profiledropdwn .profusername{
+    margin-left: -13px;
+    margin-top: 10px;
+}
+
+.profiledropdwn .profile a{
+    text-decoration: none;
+    
+}
+
+.profiledropdwn .profile a:hover{
+    color: #b64242;
+}
+
+.profiledropdwn .profile .editprofile{
+    vertical-align: middle;
+    margin-top: -13px;
+    margin-left: 12px;
+}
+
+
+.profiledropdwn .profilelogout .btn{
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.profiledropdwn .profilelogout .btn:hover{
+    color: aqua;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                             /* Head first carousal */
+
+.carousel-caption h5{
+    font-size: 3.40rem;
+    margin-bottom: 0px;
+}
+ 
+
+.carousel-caption p{
+    font-size: 1.7rem;
+    margin-bottom: 215px;
+}
+
+
+
+
+
+
+                                                                       /* footer */
+.bottom-foot{
+    background: linear-gradient(to right, #c94b4b, #4b134f);
+
+}
+
+
+.text-center{
+    text-decoration: none;
+}
+
+
+
+

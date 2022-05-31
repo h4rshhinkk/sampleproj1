@@ -1,0 +1,110 @@
+{% extends 'adminmaster.html' %}
+{% block content %}
+{% load static %}
+
+
+<h2>Requests</h2>
+<div class="line"></div>
+
+<div class="row pt-5">
+    <div class="col-lg-12">
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Sl.no</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+
+                    <th scope="col">Mobile Number</th>
+                    
+                    <th scope="col">Messages</th>
+                    
+
+                </tr>
+            </thead>
+            {% for i in dispreqmsgs %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{i.id}}</th>
+                    <td>{{i.ReqName}}</td>
+                    <td>{{i.ReqEmail}}</td>
+                    
+                    <td>{{i.ReqMobile}}</td>
+
+                    <td>{{i.ReqMessage}}</td>
+                  
+
+
+
+                </tr>
+                {% endfor %}
+                <!-- <tr>
+                    <th scope="row">Raju</th>
+                    <td>raju212@gmail.com</td>
+                    <td>8280008060</td>
+                   
+                    <td>i want to know more amout my tution</td>
+                
+
+
+                </tr>
+                <tr>
+                    <th scope="row">shahil</th>
+                    <td>kshahil2@gmail.com</td>
+                    <td>8281218060</td>
+                   
+                    <td>how the fee structures for neet class</td>
+                   
+                </tr>
+                <tr>
+                    <th scope="row">vivek</th>
+                    <td>vivi4545@gmail.com</td>
+                    <td>8121218060</td>
+                    
+                    <td>i want to know more amout my tution</td>
+                   
+                </tr>
+                <tr>
+                    <th scope="row">Anjali</th>
+                    <td>anjali32@gmail.com</td>
+                    <td>8281216080</td>
+                   
+                    <td>i want to know more amout my tution</td>
+                    
+                </tr> -->
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

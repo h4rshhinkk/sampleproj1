@@ -1,0 +1,97 @@
+{% extends 'teachmaster.html' %}
+{% block content %}
+{% load static %}
+
+
+
+<div class="row m-2 teachpay">
+    <div class="col-lg-6 col-md-6 col-8 p-2">
+        <div class="bookinghead">
+            <h2>Payment Details</h2>
+            
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-8 p-2">
+            <div class="freearearight">
+                <!-- free area  -->
+            </div>
+    
+        </div>
+
+    </div>
+
+    <div class="w-100  text-center pt-4 teachpay_details">
+        <div class="table-responsive-lg table-responsive-md table-responsive-sm">
+            <table class="table table-hover ">
+
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Transaction ID</th>
+                        <th scope="col">Name</th>
+    
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Status</th>
+    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">#100001</th>
+                        <td>Rahil</td>
+                        <td>21-01-22</td>
+                        <td>14:30</td>
+                        <td>2500</td>
+                        <td> <a href="#" class="btn btn-success">Paid</a> </td>
+    
+    
+    
+                    </tr>
+                    <tr>
+                        <th scope="row">#100002</th>
+                        <td>Shamil</td>
+                        <td>21-01-22</td>
+                        <td>15:30</td>
+                        <td>2500</td>
+                        <td> <a href="#" class="btn btn-success">Paid</a></td>
+    
+    
+                    </tr>
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

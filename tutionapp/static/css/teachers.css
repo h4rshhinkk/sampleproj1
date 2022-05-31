@@ -1,0 +1,74 @@
+
+/*  START OF HEAD PART  */
+
+.carousel-caption h5{
+    font-size: 3.40rem;
+    margin-bottom: 8px;
+}
+ 
+
+.carousel-caption p{
+    font-size: 1.7rem;
+    margin-bottom: 215px;
+}
+
+
+.headndbread{
+
+    margin-top: 0px;
+    margin-bottom: 5rem
+}
+
+.breadcrumbs{
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 8px;
+}
+
+
+/*  END OF HEAD PART  */
+
+/* Start of staff id  */
+
+
+.designation{
+font-weight: 500;
+font-size: 12px;
+color: #b64242;
+text-transform: uppercase;
+
+}
+
+.staffdetails{
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.staff-name{
+font-size: 25px;
+letter-spacing: 1px;
+}
+
+
+.teachimg img{
+    transition: all .5s ease;
+}
+
+.teachimg img:hover{
+    transform: scale(1.1);
+}
+
+
+                                                          /* VIEW MORE */
+
+
+.viewmore2{
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+.viewmore{
+    text-align: center;
+    
+}

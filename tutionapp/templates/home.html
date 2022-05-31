@@ -1,0 +1,863 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+  <link rel="stylesheet" href="{% static 'css/homestyle.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+  <title>Mytuition</title>
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="col-lg-12 col-sm-12">
+
+      <!-- Navigation BAR -->
+
+
+      <nav class="navbar navbar-expand-lg navbar-dark top-header">
+        <a class="navbar-brand logo-text animate__animated animate__pulse" style="font-size: 30px;"
+          href="{% url 'home' %}">Mytuition.</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+
+
+
+            <li class="nav-item contact-nav">
+              <a class="nav-link" href="">Home</a>
+            </li>
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-expanded="false">
+                Courses
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/kersylb">Kerala State Syllabus</a>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'cbsesylb' %}">CBSE Syllabus</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">NEET Crash Course</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">JEE Crash Course</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Coding for Kids</a>
+
+              </div>
+            </li>
+
+            <li class="nav-item contact-nav">
+              <a class="nav-link" href="/teachersinfo">Teachers</a>
+            </li>
+
+            <li class="nav-item contact-nav">
+              <a class="nav-link" href="aboutus">About</a>
+            </li>
+
+
+            <li class="nav-item contact-nav">
+              <a class="nav-link" href="/contactus">Contact</a>
+            </li>
+
+            <!-- <form class="form-inline my-2 mr-3 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+
+
+
+            <!-- <button type="button" class="btn btn-danger ml-2">Sign up</button> -->
+
+
+
+
+
+          </ul>
+          <!-- <div class="userbtn">
+            <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-user-circle"></i></a>
+
+        </div> -->
+
+
+          {% if 'userid' in request.session %}
+          <div class="profiledropdwn">
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-expanded="false">
+                <i class="fa fa-user-circle"></i>
+              </a>
+              <div class="dropdown-menu userdrop" aria-labelledby="navbarDropdown">
+                <div style="height: 200px; width: 200px;" class="profile">
+                  <ul>
+
+                    <li>
+                      <img src="{% static 'images/avatar.png' %}">
+                    </li>
+
+                    <li>
+                      <p class="profusername">
+                        {{std_details.StudentName}}</p>
+                    </li>
+
+                    <li class="editprofile">
+                      <a href="/userprofile"><i class="fa fa-edit icon1"></i> View Profile</a>
+                    </li>
+
+                    <li class="profilelogout">
+                      <a href="#" class="btn btn-danger" onclick="location.href='/stdlogout'">Log Out</a>
+                    </li>
+
+
+
+                  </ul>
+                </div>
+
+              </div>
+            </li>
+          </div>
+
+          {% else %}
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#elegantModalForm">Join
+            us</button>
+          {% endif %}
+
+          <!-- <div class="user_btn">
+          <li class="usericon" ><i class="fa fa-user-circle"></i>
+            
+          </li>
+
+        </div> -->
+
+
+        </div>
+      </nav>
+
+
+
+
+
+
+      <!-- LOGIN MODAL sTART -->
+
+
+      <!-- Modal -->
+      <form id="signinform" action="{% url 'stdlogin' %}" method="POST">
+        {% csrf_token %}
+
+        <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <!--Content-->
+            <div class="modal-content form-elegant">
+              <!--Header-->
+              <div class="modal-header text-center">
+                <h3 class="modal-title w-100 dark-grey-text  my-3" id="myModalLabel"><strong>Sign in</strong></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <!--Body-->
+              <div class="modal-body mx-4">
+                <!--Body-->
+                <div class="md-form mb-5">
+                  <input type="email" id="Form-email1" name="uemail" class="form-control validate"
+                    placeholder="Enter Your Email">
+                  <!-- <label data-error="wrong" data-success="right" for="Form-email1">Your email</label> -->
+                </div>
+
+                <div class="md-form pb-3">
+                  <input type="password" id="Form-pass1" name="password" class="form-control validate"
+                    placeholder="Enter Your Password">
+                  <!-- <label data-error="wrong" data-success="right" for="Form-pass1">Your password</label> -->
+                  <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#" class="blue-text ml-1">
+                      Password?</a></p>
+                </div>
+
+                <div class="text-center mb-3">
+                  <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a sign_btn">Sign
+                    in</button>
+                </div>
+                <!-- 
+                   <p>Don't have an account?</p><a href="#" class="signuptoacc">Sign up</a>
+
+                <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in
+                   with:</p> -->
+
+                <div class="row my-3 d-flex justify-content-center">
+                  <!--Facebook-->
+                  <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a social_btn"><i
+                      class="fa fa-facebook-f text-center"></i></button>
+                  <!--Twitter-->
+                  <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a social_btn"><i
+                      class="fa fa-twitter"></i></button>
+                  <!--Google +-->
+                  <button type="button" class="btn btn-white btn-rounded z-depth-1a social_btn"><i
+                      class="fa fa-google-plus"></i></button>
+                </div>
+              </div>
+              <!--Footer-->
+              
+
+              <div class="modal-footer mx-5 pt-3 mb-1">
+               
+                <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="usersignup"
+                    class="blue-text ml-1">
+                    Sign Up</a></p>
+
+                    <p class="font-small grey-text d-flex justify-content-end">Login as Teacher? <a href="usersignup"
+                      class="blue-text ml-1">
+                      Login here</a></p>
+              </div>
+            </div>
+            <!--/.Content-->
+          </div>
+        </div>
+      </form>
+      <!-- Modal -->
+
+
+      <style>
+        .error {
+          color: red;
+          font-size: 14px;
+
+
+        }
+      </style>
+
+
+
+      <script>
+
+        // $(document).ready(function(){
+        //     $("#elegantModalForm").modal('show');
+        // });
+
+
+
+
+
+
+
+
+
+
+
+
+        $('#signinform').validate({
+          rules: {
+            email: {
+              required: true,
+              email: true
+            },
+            password: {
+              required: true,
+              minlength: 8,
+              maxlength: 30,
+              pwcheck: true,
+              //  checklower: true,
+              //   checkupper: true,
+              //   checkdigit: true
+            }
+          },
+
+          messages: {
+            email: {
+
+              required: "*Please enter email address",
+              email: "*please enter a valid email address",
+
+            },
+
+            password: {
+              required: '*this field is required',
+              minlength: '*Password must be at least 8 Characters long',
+              pwcheck: 'Password is not strong enough'
+              //  checklower: "Need atleast 1 lowercase alphabet",
+              //   checkupper: "Need atleast 1 uppercase alphabet",
+              //   checkdigit: "Need atleast 1 digit"
+            },
+
+          },
+
+          submitHandler: function (form) {
+            form.submit();
+          }
+
+
+
+
+        });
+
+
+
+
+      </script>
+
+
+
+      <!-- LOGIN MODAL END -->
+
+    </div>
+  </div>
+
+
+  <div class="row homejumbo">
+    <div class="col-lg-12">
+
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <!-- <img class="d-block w-100" src="{% static 'images/carsl-1.jpg' %}" alt="First slide"> -->
+            <img src="{% static 'images/carsl-1.jpg' %}" class="img-fluid w-100" alt="">
+            <div class="carousel-caption  d-none d-md-block">
+              <h5 class="animate__animated  animate__backInLeft animate__slow">Boost Confidence, Improve Grades</h5>
+              <p class="animate__animated animate__backInRight animate__slow">Bringing learning home is easy
+
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- <div class="jumbotron jumbotron-fluid">
+        <div class="container hdcontainer">
+          <h5 class="display-4 hd1">Boost Confidence, Improve Grades</h5>
+          <p class="lead hd2 text-center ">Bringing learning home is easy</p>
+        </div>
+      </div> -->
+
+
+    </div>
+  </div>
+
+
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="features">Our Key Features</h2>
+        <p class="features2">Change is the end result of all true learning.</p>
+      </div>
+
+      <div class="col-lg-4 col-12 col-md-6" style="margin-top: 20px;">
+        <div class="card shadow p-3 mb-5 bg-white rounded featurecard"
+          style="width: 25rem; height: 16rem; border-radius: 15px;">
+          <div class="card-body">
+            <i class="fa fa-graduation-cap " id="fticon"></i>
+            <h5 class="card-title"><br>Certified Teachers</h5>
+            <p class="card-text">Highly skilled Teachers from various Schools and top tier colleges with 10+ years of
+              experience</p>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4 col-12 col-md-6" style="margin-top: 20px;">
+        <div class="card shadow p-3 mb-5 bg-white rounded featurecard"
+          style="width: 25rem; height: 16rem; border-radius: 15px;">
+          <div class="card-body">
+            <i class="fa fa-users" id="fticon"></i>
+            <h5 class="card-title"><br> One-to-One Sessions</h5>
+            <p class="card-text">2-way Interaction between student & teacher, better than recorded videos</p>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4 col-12 col-md-6" style="margin-top: 20px;">
+        <div class="card shadow p-3 mb-5 bg-white rounded featurecard"
+          style="width: 25rem; height: 16rem; border-radius: 15px;">
+          <div class="card-body">
+            <i class="fa fa-video-camera" id="fticon"></i>
+            <h5 class="card-title"><br>Live class</h5>
+            <p class="card-text">live sessions & any career question can be clarified and handled by our qualified and
+              experienced career experts.</p>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!-- 2nd part of our features -->
+
+      <div class="col-lg-4 my-5 col-12 col-md-6">
+        <div class="card shadow p-3 mb-5 bg-white rounded featurecard"
+          style="width: 25rem; height: 16rem; border-radius: 15px;">
+          <div class="card-body">
+            <i class="fa fa-money" aria-hidden="true" id="fticon"></i>
+            <h5 class="card-title"><br>Cost effective </h5>
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit vero perspiciatis
+              magni.</p>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4 my-5 col-12 col-md-6">
+        <div class="card shadow p-3 mb-5 bg-white rounded featurecard"
+          style="width: 25rem; height: 16rem; border-radius: 15px;">
+          <div class="card-body">
+            <i class="fa fa-clock-o" id="fticon"></i>
+            <h5 class="card-title"><br>Flexibility of choosing hours and time</h5>
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit vero perspiciatis
+              magni.</p>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4 my-5 col-12 col-md-6">
+        <div class="card shadow p-3 mb-5 bg-white rounded featurecard"
+          style="width: 25rem; height: 16rem; border-radius: 15px;">
+          <div class="card-body">
+            <i class="fa fa-universal-access" id="fticon"></i>
+            <h5 class="card-title"><br>Convenient & Safe</h5>
+            <p class="card-text">No need to travel, learn at the comfort & safety of your home</p>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="coursedetails">Our Courses</h2>
+      <p class="coursedetails2">concept-oriented courses provided with an affordable fee structure.</p>
+    </div>
+  </div>
+
+
+
+
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+    <!--Controls-->
+    <div class="controls-top" style="text-align: center; margin-bottom: 20px;">
+      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+    </div>
+    <!--/.Controls-->
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+      <li data-target="#multi-item-example" data-slide-to="1"></li>
+
+    </ol>
+    <!--/.Indicators-->
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active classcar">
+
+
+
+        <div class="col-md-4" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top" src="{% static 'images/lpstdpic.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">5-7 Standard</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-danger" href="/kersylb">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top lpstd" src="{% static 'images/upstdpic2.jpg' %}" alt="Card image cap "
+              style="height: 290px;">
+            <div class="card-body">
+              <h4 class="card-title">8-10 Standard</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-danger">Enroll Now</a>
+              <!-- <div class="dropdown">
+                <button class="btn btn-danger dropbtn">Enroll Now</button>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+              ------ -->
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top" src="{% static 'images/hstdpic.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">11-12 Standard</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-danger">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.First slide-->
+
+      <!--Second slide-->
+      <div class="carousel-item ">
+
+        <div class="col-md-4" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top" src="{% static 'images/neet.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">NEET Crash Course</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-danger">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top" src="{% static 'images/jee.jpg' %}" alt="Card image cap " style="height: 293px;">
+            <div class="card-body">
+              <h4 class="card-title">JEE Crash Course</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-danger">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" style="float:left">
+          <div class="card mb-2">
+            <img class="card-img-top" src="{% static 'images/coding.jpg' %}" alt="Card image cap"
+              style="height: 293px;">
+            <div class="card-body">
+              <h4 class="card-title">Coding For Kids</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a class="btn btn-danger">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col-md-3" style="float:left">
+      <div class="card mb-2">
+        <img class="card-img-top"
+          src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Spoken English</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+            card's content.</p>
+            <a class="btn btn-danger">Enroll Now</a>
+        </div>
+      </div>
+    </div> -->
+
+        <!-- <div class="col-md-3" style="float:left">
+     <div class="card mb-2">
+        <img class="card-img-top"
+          src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">1-4 Standard</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+            card's content.</p>
+          <a class="btn btn-danger">Enroll Now</a>
+        </div>
+      </div>
+    </div> -->
+
+      </div>
+      <!--/.Second slide-->
+
+
+
+    </div>
+    <!--/.Slides-->
+
+  </div>
+  <!--/.Carousel Wrapper-->
+
+
+
+
+  <!-- Testimonials PART   -->
+
+  <!-- 
+  <div class="row">
+    <div class="col-md-12 testcol mt-5">
+      <h2 class="coursedetails">Testimonials</h2>
+      <p class="coursedetails2">Students & Parents sharing their Experience</p>
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- footer -->
+
+  <!-- Remove the container if you want to extend the Footer to full width. -->
+  <div class="col-lg-12 container bottom-foot">
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white"
+      style="background: linear-gradient(to right, #c94b4b, #4b134f);">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold" style="text-align:start;">
+                Mytuition
+              </h6>
+              <p style="text-align:start;">
+                We aim to make our students achieve their full potential.
+                Considering that our prices are quite affordable and can be customised.
+                We value our students time and strive to work hard to deliver the best classes and to invest in their
+                education.
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <hr class="w-100 clearfix d-md-none" />
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">HOME</h6>
+              <p>
+                <a href="" class="text-white">Courses</a>
+
+
+              </p>
+
+              <p>
+                <a href="teachersinfo/" class="text-white">Teachers</a>
+              </p>
+              <p>
+                <a href="aboutus" class="text-white">About</a>
+              </p>
+              <p>
+                <a class="text-white">Blog</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <hr class="w-100 clearfix d-md-none" />
+
+            <!-- Grid column -->
+            <hr class="w-100 clearfix d-md-none" />
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+              <p><i class="fa fa-home mr-3"></i> Malappuram, KL 84, India</p>
+              <p><i class="fa fa-envelope mr-3"></i> mytutioninfo@gmail.com</p>
+              <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+              <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+              <!-- Facebook -->
+              <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!" role="button"><i
+                  class="fa fa-facebook-f"></i></a>
+
+              <!-- Twitter -->
+              <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!" role="button"><i
+                  class="fa fa-twitter"></i></a>
+
+              <!-- Google -->
+              <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="#!" role="button"><i
+                  class="fa fa-google"></i></a>
+
+              <!-- Instagram -->
+              <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!" role="button"><i
+                  class="fa fa-instagram"></i></a>
+
+
+            </div>
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-white" href="">Mytuition.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+  <!-- End of .container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+
+
+
+
+
+
+</body>
+
+</html>

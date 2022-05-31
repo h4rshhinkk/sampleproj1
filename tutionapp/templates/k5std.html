@@ -1,0 +1,559 @@
+{% extends 'master.html' %}
+{% block content %}
+{% load static %}
+
+
+<!-- /*  START OF HEAD PART  */ -->
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+
+                    <img src="{% static 'images/teachinfo.jpg' %}" class="img-fluid w-100 overlay" alt="">
+                    <div class="carousel-caption  d-none d-md-block">
+
+
+
+                        <div class="headndbread">
+
+                            <h5 class="cteachtext animate__animated  animate__backInLeft animate__fast">Start your kid’s
+                                journey towards learning</h5>
+
+                            <div class="breadcrumbs ">
+                                <span>
+                                    <a href="" style="text-decoration: none; color: white;">HOME
+                                        <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </span>
+
+                                <span>
+                                    <a>Kerala state Syllabus
+                                        <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </span>
+
+                                <span>
+                                    <a>5th Standards
+                                        <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- /*  END OF HEAD PART  */ -->
+
+
+
+
+
+<div class="row pt-5 pl-5 pb-5 slctclass">
+
+    <div class="col-lg-6 col-md-6 col-sm-6 imgcontainer">
+
+        <div class="k5card-image image-fluid">
+            <a href=""> <img src="{% static 'images/5classbig.jpg' %}" /></a>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 pr-5 detailscontainer">
+        <div class="detailsofclass">
+            <h3 class="headofdc">Book Your Class Here</h3>
+
+
+            <form>
+                <div class="det-inputrow1">
+                    <div class="det-inputgp1">
+                        <label>Select Subject</label>
+                        <select class=" select form-control" id="selectbox">
+                            <option value="" disabled selected>-Select Subject-</option>
+                            <option value="English">English</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Social Studies">Social Studies</option>
+                            <option value="Basic Science">Basic Science</option>
+
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="det-inputrow2">
+                    <div class="det-inputgp2">
+                        <label>Requested topic if any:</label>
+                        <textarea class="k5stdtxtarea"></textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="det-inputrow3">
+                    <div class="det-inputgp3">
+                        <label>Select Class Date</label>
+                        <input type="date" placeholder="">
+
+                    </div>
+
+                    <div class="det-inputgp3">
+                        <label>Select Class Time</label>
+                        <select>
+                            <option>-Select-</option>
+                            <option>10:00 AM</option>
+                            <option>11:00 AM</option>
+
+                            <option>12:00 AM</option>
+                            <option>1:00 PM</option>
+                            <option>2:00 PM </option>
+                            <option>3:00 PM</option>
+                            <option>4:00 PM </option>
+                            <option>5:00 PM</option>
+                            <option>6:00 PM </option>
+                            <option>7:00 PM</option>
+                            <option>8:00 PM </option>
+                            <option>9:00 PM</option>
+                            <option>10:00 PM </option>
+
+
+                        </select>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+                <div class="det-inputrow4 price">
+                    <div class="det-inputgp4">
+                        <label>Class Duration</label>
+                        <select id="classduration" class="summabledays">
+            
+                            <option>-Select-</option>
+                            <option value="15">15 days</option>
+                            <option value="30">1 Month</option>
+                            <option value="60">2 Month</option>
+                            <option value="90">3 Month</option>
+            
+            
+                        </select>
+                    </div>
+            
+                    <div class="det-inputgp4">
+                        <label>Hour/Day</label>
+                        <select id="classtime" class="pricepertime">
+            
+                            <option>-Select-</option>
+                            <option value="200">1 Hour</option>
+                            <option value="250">1:30 Hour</option>
+                            <option value="300">2 Hour</option>
+                          
+            
+            
+                        </select>
+                    </div>
+            
+            
+            
+            
+                    
+            
+            
+                </div>
+
+
+
+
+
+
+
+                <div class="det-inputrow4">
+                    <div class="det-inputgp4" style="display: none;" id="englishbox">
+                        <label>Available Tutors</label>
+                        <select class="select form-control">
+                            <option value="" disabled selected>-Select-</option>
+                            <option>Roy Mathew</option>
+                            <option>Abdul Rasheed</option>
+
+                            <option>Nargees</option>
+                            <option>Mohammed Ali</option>
+                            <option>Abdul Rasheed</option>
+                            <option>Noushad</option>
+
+
+
+                        </select>
+
+                    </div>
+                    <div class="det-inputgp4" style="display: none;" id="mathsbox">
+                        <label>Available Tutors</label>
+                        <select class="select form-control">
+                            <option value="" disabled selected>-Select-</option>
+                            <option>Vasheeda</option>
+                            <option>Manu Manuel</option>
+
+                            <option>Anil KP</option>
+                            <option>Dinesh Raja</option>
+                            <option>Sunil K Joseph</option>
+                            <option>Sadik Ali</option>
+
+
+
+                        </select>
+
+                    </div>
+                    <div class="det-inputgp4" style="display: none;" id="ssbox">
+                        <label>Available Tutors</label>
+                        <select class="select form-control">
+                            <option value="" disabled selected>-Select-</option>
+                            <option>Sidheeq</option>
+                            <option>Sarjas</option>
+
+                            <option>Shihabudeen</option>
+                            <option>Muneer</option>
+                            <option>Shafi</option>
+                            <option>Raheem Ali</option>
+
+
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="det-inputgp4" style="display: none;" id="bsbox">
+                        <label>Available Tutors</label>
+                        <select class="select form-control">
+                            <option value="" disabled selected>-Select-</option>
+                            <option>Shaji</option>
+                            <option>Anwar</option>
+
+                            <option>Najmuneesa</option>
+                            <option>Sundaran K</option>
+                            <option>Noushad KP</option>
+                            <option>Nisha</option>
+
+
+
+                        </select>
+
+                    </div>
+                </div>
+
+
+
+                
+                
+
+                <div class="pricedisplay">
+                    Total Fee: <b id="sum"></b>
+                    <!-- Total Fee  <input class="feearea" disabled  id="sum" type="text"/> -->
+                </div>
+                
+                <!-- <div class="text-left" style="display: none;" id="oneone">
+                    
+                   <h2>$200</h2>
+                </div> 
+                <div class="text-left" style="display: none;" id="onetwo">
+                    
+                    <h2>$400</h2>
+                 </div> -->
+
+                <div class="text-right">
+                    
+                    <button class="enrollbtn mb-5" type="submit"> Proceed</button>
+                </div> 
+
+
+
+
+            </form>
+
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+
+// Tution Price Display Code Start
+
+total = function(){
+                $('form').change(function() {
+                    var total = 0;
+                    $(".summabledays").each(function() {
+                        total += parseFloat($(this).val() * $(this).closest(".price").find(".pricepertime").val());
+                    });
+                    $("#sum").val(total)
+                    document.getElementById("sum").innerHTML=total
+                });
+            }
+            $(document).ready(function(){
+                total();
+            });
+
+
+
+
+    // teacher avail select box start
+
+    $('#selectbox').click(function () {
+        if ($('#selectbox').val() == "English") {
+            $('#englishbox').show()
+        } else {
+            $('#englishbox').hide()
+
+        }
+
+    });
+
+
+    $('#selectbox').click(function () {
+        if ($('#selectbox').val() == "Mathematics") {
+            $('#mathsbox').show()
+        } else {
+            $('#mathsbox').hide()
+
+        }
+
+    });
+
+
+    $('#selectbox').click(function () {
+        if ($('#selectbox').val() == "Social Studies") {
+            $('#ssbox').show()
+        } else {
+            $('#ssbox').hide()
+
+        }
+
+    });
+
+    $('#selectbox').click(function () {
+        if ($('#selectbox').val() == "Basic Science") {
+            $('#bsbox').show()
+        } else {
+            $('#bsbox').hide()
+
+        }
+    });
+
+
+    // teacher avail select box end
+
+</script>
+
+
+
+<!-- 2nd Part Of  Class benefit-->
+
+
+<div class="row  pt-5 pl-5 clsft ">
+
+    <div class="col lg-12 ftrscontainer">
+        <h2 class="ftrshead"> Here’s what you get after enrolling with us</h2>
+
+        <div class="col lg-6">
+
+            <div class="planbenefitsection">
+                <div class="twoplanbenefitcontainer">
+                    <div class="planbenefitcontainer">
+                        <div class="planbenefittext">
+                            Real Personal Attention
+                        </div>
+                        <div class="planbenefitseparator"></div>
+
+                    </div>
+                    <div class="planbenefitcontainer">
+                        <div class="planbenefittext">
+                            Syllabus Oriented Classes
+                        </div>
+                        <div class="planbenefitseparator"></div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="twoplanbenefitcontainer">
+                    <div class="planbenefitcontainer">
+                        <div class="planbenefittext">
+                            Live Classes from Best Teachers
+                        </div>
+                        <div class="planbenefitseparator"></div>
+
+                    </div>
+                    <div class="planbenefitcontainer">
+                        <div class="planbenefittext">
+                            Dedicated Academic Mentor
+                        </div>
+                        <div class="planbenefitseparator"></div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="twoplanbenefitcontainer">
+                    <div class="planbenefitcontainer">
+                        <div class="planbenefittext">
+                            Offline Videos
+                        </div>
+                        <div class="planbenefitseparator"></div>
+
+                    </div>
+                    <div class="planbenefitcontainer">
+                        <div class="planbenefittext">
+                            Practice Questions
+                        </div>
+                        <div class="planbenefitseparator"></div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="twoplanbenefitcontainer">
+                    <div class="planbenefitcontainer">
+                        <div class="planbenefittext">
+                            Home Test
+                        </div>
+                        <div class="planbenefitseparator"></div>
+
+                    </div>
+                    <div class="planbenefitcontainer">
+                        <div class="planbenefittext">
+                            Parent Corner
+                        </div>
+                        <div class="planbenefitseparator"></div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

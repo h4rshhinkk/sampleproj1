@@ -1,0 +1,53 @@
+/*  START OF HEAD PART  */
+
+.carousel-caption h5{
+    font-size: 3.40rem;
+    margin-bottom: 8px;
+    
+}
+ 
+
+.carousel-caption p{
+    font-size: 1.7rem;
+    margin-bottom: 215px;
+}
+
+
+.headndbread{
+
+    margin-top: 0px;
+    margin-bottom: 5rem
+}
+
+.breadcrumbs{
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 8px;
+}
+
+
+/*  END OF HEAD PART  */
+
+
+.kercard-image{
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.kerclsimg h3{
+    color: #777D82;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-left: 90px;
+    font-size: 30px;
+    
+}
+
+.kerclsimg img{
+    transition: all .5s ease;
+}
+
+.kerclsimg img:hover{
+transform: scale(1.1);
+}
+

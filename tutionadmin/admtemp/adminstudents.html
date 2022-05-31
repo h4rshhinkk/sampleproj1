@@ -1,0 +1,209 @@
+{% extends 'adminmaster.html' %}
+{% block content %}
+{% load static %}
+
+<div class="row m-1">
+
+
+<h2>All Students Data</h2>
+<div class="line"></div>
+
+<!-- <div class="row pt-5">
+  <div class="col-lg-12"> -->
+    
+    <div class="w-100 pt-4">
+
+    <div class="table-responsive-lg table-responsive-md">
+
+
+      <table class="table ">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">SID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Class</th>
+            <th scope="col">Board</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Parent</th>
+            <th scope="col">Address</th>
+            <!-- <th scope="col">DOB</th> -->
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Manage</th>
+
+
+          </tr>
+        </thead>
+        
+        <div class="tdata">
+          {% for i in dispstddetails %}
+        <tbody>
+          <tr>
+            <th scope="row">{{i.id}}</th>
+            <td>{{i.StudentName}}</td>
+            <td>{{i.Gender}}</td>
+            <td>{{i.StudentClass}}</td>
+            <td>{{i.Board}}</td>
+            <td>English</td>
+            <td>{{i.ParentName}}</td>
+            <td>{{i.Address}}</td>
+            <!-- <td>21/06/1998</td> -->
+            <td>{{i.StudentPhone}}</td>
+            <td>{{i.StudentEmail}}</td>
+            <td > 
+              <a href="#" class="btn btn-danger " data-toggle="modal" data-target="#removestudent"><i class="fa fa-trash icon2"></i>Remove</a>
+            </td>
+
+            <!-- <a href="#" class="btn btn-success m-1 "><i class="fa fa-edit icon2"></i>Edit</a> -->
+
+
+            
+
+          </tr>
+
+          {% endfor %}
+
+          <!-- <tr>
+            <th scope="row">2</th>
+            <td>Rahil SK</td>
+            <td>Male</td>
+            <td>11</td>
+            <td>CBSE</td>
+            <td>Physics</td>
+            <td>Vincent</td>
+            <td>Alapuzha</td> -->
+            <!-- <td>21/06/1998</td> -->
+            <!-- <td>9744800987</td>
+            <td>Rahilsk@gmail.com</td>
+            <td>
+              <a href="#"class="btn btn-danger "><i class="fa fa-trash icon2"></i>Remove</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Jithin Ram</td>
+            <td>Male</td>
+            <td>10</td>
+            <td>Kerala State</td>
+            <td>Biology</td>
+            <td>Aravind</td>
+            <td>Calicut</td> -->
+            <!-- <td>21/06/1998</td> -->
+            <!-- <td>9744800006</td>
+            <td>jram@gmail.com</td>
+            <td>
+              <a href="#" class="btn btn-danger "><i class="fa fa-trash icon2"></i>Remove</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Raniya C</td>
+            <td>Female</td>
+            <td>12</td>
+            <td>Kerala State</td>
+            <td>Chemistry</td>
+            <td>Sulaiman</td>
+            <td>Kondotty</td> -->
+            <!-- <td>21/06/1998</td> -->
+            <!-- <td>9744400986</td>
+            <td>raniyac@gmail.com</td>
+            <td> 
+              <a href="#" class="btn btn-danger "><i class="fa fa-trash icon2"></i>Remove</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Ann Maria</td>
+            <td>Female</td>
+            <td>12</td>
+            <td>CBSE</td>
+            <td>Mathematics</td>
+            <td>Alex K</td>
+            <td>Thrissur</td> -->
+            <!-- <td>21/06/1998</td> -->
+            <!-- <td>9744500986</td>
+            <td>annmaria@gmail.com</td>
+            <td> <a href="#" class="btn btn-danger"><i class="fa fa-trash icon2"></i>Remove</a>
+            </td>
+            
+          </tr> -->
+        </tbody>
+      </div>
+      </table>
+
+
+
+    </div>
+
+
+
+  </div>
+
+    </div>
+    
+
+  <!-- </div>
+
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- DELET COnfirmation MODAL -->
+   <div class="removestdconfirm">
+    <div id="removestudent" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content border-0">
+              <div class="modal-body p-0">
+                  <div class="card border-0 p-sm-3 p-2 justify-content-center">
+                      <div class="card-header pb-0 bg-white border-0 ">
+                          <div class="row">
+                              <div class="col ml-auto"><button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>
+                              
+                            </div>
+                          <p class="font-weight-bold mb-2"> Do you really want to remove this student ?</p>
+                          <p class="text-muted ">This Process cannot be undone.</p>
+                      </div>
+                      <div class="card-body px-sm-4 mb-2 pt-1 pb-0">
+                          <div class="row justify-content-end no-gutters">
+                              <div class="col-auto"><button type="button" class="btn btn-light text-muted" data-dismiss="modal">Cancel</button></div>
+                              <div class="col-auto"><button type="button" class="btn btn-danger px-4" data-dismiss="modal">Delete</button></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  {% endblock %}

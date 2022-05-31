@@ -1,0 +1,490 @@
+{% extends 'master.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+
+
+.card {
+        box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+        width: 155%;
+    }
+    .card .card-header {
+        font-weight: 500;
+    }
+    .card-header:first-child {
+        border-radius: 0.35rem 0.35rem 0 0;
+    }
+    .card-header {
+        padding: 1rem 1.35rem;
+        margin-bottom: 0;
+        background-color: rgba(33, 40, 50, 0.03);
+        border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+    }
+    .form-control, .dataTable-input {
+        display: block;
+        width: 100%;
+        /* padding: 0.875rem 1.125rem; */
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1;
+        color: #69707a;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #c5ccd6;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0.35rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    
+    .nav-borders .nav-link.active {
+        color: #6df200;
+        border-bottom-color: #c6f200;
+    }
+    .nav-borders .nav-link {
+        color: #69707a;
+        border-bottom-width: 0.125rem;
+        border-bottom-style: solid;
+        border-bottom-color: transparent;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+
+    .hd1{
+        padding-left: 212px;
+    padding-top: 50px;
+    }
+    .hd2{
+        padding-left: 212px;
+    }
+
+
+    
+</style>
+<div class="hding">
+<h3 class="font-weight-bold ml-md-0 mx-auto text-center text-sm-left hd1"> Start your kid’s journey towards learning </h3>
+        <h4 class="hd2">Sign up here.</h4>
+    </div>
+
+
+ <div class="container-xl px-4 mt-4 mb-5">
+
+    <div class="row">
+        
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <!-- <div class="card-header">Student's Details</div> -->
+                <div class="card-body">
+
+
+                    <form id="registerform" action="{% url 'usignup' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (student name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputstudentname" >Student Name</label>
+                                <input class="form-control" id="inputstudentname" type="text" placeholder="" value=""  name="studentname">
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputparentname">Parent/Gaurdian Name</label>
+                                <input class="form-control" id="inputparentname" type="text" placeholder="" value="" name="parentname" >
+                            </div>
+                        </div>
+
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (Gender)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputgender">Gender</label>
+                                <!-- <input class="form-control" id="inputgender" type="text" placeholder="Gender"> -->
+                                <select class="form-control validate[required]" id="genderinput" name="selectgender" >
+                                    <option value="" >-Select Gender-</option>    
+                                    <option value="Male" >Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Others">Others</option>
+
+                                </select>
+                            </div>
+                            <!-- <div class="col-md-3">
+                                <label class="small mb-1" for="inputgender">Age</label>
+                                <input type="text" class="form-control" name="age">
+
+
+                            </div> -->
+                            
+                            <!-- Form Group (Board)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">Board</label>
+                                <!-- <input class="form-control" id="inputLocation" type="text" placeholder="Board" value=""> -->
+                                <select class="form-control" id="boardinput" name="selectboard">
+                                    <option value="" disabled selected>-Select Board-</option>    
+                                    <option value="Kerala State Syllabus">Kerala State Syllabus</option>
+                                        <option value="CBSE">CBSE</option>
+                                        
+
+                                </select>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                           
+                            
+                            <!-- Form Group (Class)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputclass">Class</label>
+                                <!-- <input class="form-control" id="inputclass" type="text" placeholder="" value=""> -->
+                                <select class="form-control" style="display: none;"  id="stateclass" name="selectclass">
+                                    <option value="">-Select Class-</option>    
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                        
+
+
+
+                                </select>
+                                <select class="form-control" style="display: none;" id="cbseclass" name="selectclass">
+                                    <option value="" disabled selected>-Select Class-</option>    
+                                    
+                                        
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                        
+
+
+
+                                </select>
+                            </div>
+
+                            <!-- <div class="col-md-6"  id="">
+                                <label class="small mb-1" for="inputclass">Class</label>
+                                 <input class="form-control" id="inputclass" type="text" placeholder="" value=""> -->
+                               
+                            <!-- </div> --> 
+
+
+
+
+
+                             <!-- Form Group (School  name)-->
+                             <div class="col-md-6">
+                                <label class="small mb-1" for="inputschoolName">School Name</label>
+                                <input class="form-control" id="inputschoolName" type="text" placeholder=" " value="" name="schoolname">
+                            </div>
+
+
+                        </div>
+                        <!-- Form Group (email address)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputAddress">Address</label>
+                            <input class="form-control" id="inputAddress" type="text" placeholder="" value="" name="address">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="" value="" name="email">
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (phone number)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Phone number</label>
+                                <input class="form-control" id="inputPhone" type="tel" placeholder="" value="" name="studentphone"> 
+                            </div>
+                            <!-- Form Group (birthday)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputparent">Parent/Gaurdian Phone Number</label>
+                                <input class="form-control" id="inputparent" type="text" name="parentphone" placeholder="" value="" >
+                            </div>
+                        </div>
+
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (password)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputpassword">Enter New Password</label>
+                                <input class="form-control" id="inputpassword" type="password" placeholder="" value="" name="password">
+                            </div>
+                            <!-- Form Group (confirmpassword)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputconfirmpass">Confirm Password</label>
+                                <input class="form-control" id="inputconfirmpass" type="password" name="confirmpassword" placeholder="" value="">
+                            </div>
+                        </div>
+                        <!-- Save changes button-->
+                        <!-- <button class="btn btn-primary" type="button">Signup</button> -->
+                        <div class="mb-2 mt-4">
+                            <div class="text-right"><button type="submit" class="btn btn-success btn-block"><small class="font-weight-bold">Register</small></button> </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+ </div>
+
+ 
+<style>
+    .error{
+  color: red;
+  font-size: 14px;
+  
+  
+    }
+  
+    
+  </style>
+
+
+
+<script>
+
+
+$('#boardinput').click(function(){
+    if($('#boardinput').val() == "CBSE")
+    {
+        $('#cbseclass').show()
+        $('#stateclass').hide()
+
+    }
+    else{
+        $('#stateclass').show()
+        $('#cbseclass').hide()
+    }
+})
+// $('#boardinput').click(function () {
+//         if ($('#boardinput').val() == "CBSE") {
+//             $('#cbseclass').show()
+//         }
+//         else if($('#boardinput').val() == "Kerala State Syllabus") {
+//             $('#stateclass').show()
+//         }
+//         else {
+//             $('#stateclass').hide()
+
+//         }
+
+//     });
+
+    // $('#boardinput').click(function () {
+    //     if ($('#boardinput').val() == "Kerala State Syllabus") {
+    //         $('#stateclass').show()
+    //     } else {
+    //         $('#cbseclass').hide()
+
+    //     }
+
+    // });
+
+
+
+
+
+
+ // add the rule here
+ $.validator.addMethod("valueNotEquals", function(value, element, arg){
+  return arg !== value;
+ }, "Value must not equal arg.");
+
+
+
+
+
+    $('#registerform').validate({
+        rules:{
+            studentname:{
+                required:true,
+                
+               
+            },
+
+            parentname:{
+                required:true,
+                
+            },
+
+            selectgender:
+                           { valueNotEquals: "default" },
+
+            schoolname:{
+                required:true,
+            },
+
+            age:{
+                required:true,
+            },
+
+            address:{
+                required:true,
+            },
+
+            email:{
+                required:true,
+                email:true,
+            },
+
+            studentphone:{
+                required:true,
+                // matches   : "^(\\d|\\s)+$",
+                minlength:10,
+                maxlength:10,
+            },
+            
+            parentphone:{
+                required:true,
+                // matches   : "^(\\d|\\s)+$",
+                minlength:10,
+                maxlength:10,
+            },
+
+            password:{
+                required: true,
+                minlength: 8
+            },
+
+            confirmpassword:{
+                required: true,
+            minlength: 5,
+            equalTo: "#inputpassword"
+            }
+
+
+
+
+
+        },
+
+        messages:{
+            sname:{
+                required:"*This Field is Mandotary",
+            },
+
+            pname:{
+                required:"*This Field is Mandotary",
+
+            },
+
+            selectgender: { valueNotEquals: "Please select an item!" 
+        
+            },
+
+            schoolname:{
+                required:"*This Field is Mandotary",
+            },
+
+            address:{
+                required:"*This Field is Mandotary",
+            },
+
+            email:{
+                required:"*Please enter email address",
+                email:"*please enter a valid email address",
+            },
+
+            sphone:{
+                required:"*Please enter digit only"
+            },
+
+            parentphn:{
+                required:"*Please enter digit only"
+            }
+
+
+        },
+
+
+
+
+        submitHandler: function(form){
+   form.submit();
+ }
+
+    });
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

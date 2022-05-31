@@ -1,0 +1,286 @@
+/*  START OF HEAD PART  */
+
+.carousel-caption h5{
+    font-size: 3.40rem;
+    margin-bottom: 8px;
+}
+ 
+
+.carousel-caption p{
+    font-size: 1.7rem;
+    margin-bottom: 215px;
+}
+
+
+.headndbread{
+
+    margin-top: 0px;
+    margin-bottom: 5rem
+}
+
+.breadcrumbs{
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 8px;
+}
+
+
+/*  END OF HEAD PART  */
+
+
+.cbsecard-image{
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.cbseclsimg h3{
+    color: #777D82;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-left: 90px;
+    
+}
+
+.cbseclsimg img{
+    transition: all .5s ease;
+}
+
+.cbseclsimg img:hover{
+transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+/* 8class CSS */
+/* 
+------------------- */
+
+
+
+/* contain all classes(cbse and kstate) CSS */
+/*  START OF HEAD PART  */
+
+.carousel-caption h5{
+    font-size: 57px;
+    margin-bottom: 8px;
+    
+    
+}
+ 
+
+.carousel-caption p{
+    font-size: 1.7rem;
+    margin-bottom: 215px;
+}
+
+
+.headndbread{
+
+    margin-top: 0px;
+    margin-bottom: 5rem
+    
+}
+
+.breadcrumbs{
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 8px;
+}
+
+
+/*  END OF HEAD PART  */
+
+
+/* START 0F CLASS REG FORM */
+
+
+
+
+.k5card-image{
+    overflow: hidden;
+    /* border-radius: 20px; */
+}
+
+
+
+
+
+
+
+
+.detailscontainer .headofdc{
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+  
+}
+
+
+
+
+
+
+
+.det-inputrow1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.det-inputrow2{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.det-inputrow3{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.det-inputrow4{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+}
+
+
+
+.det-inputrow1 .det-inputgp1{
+    flex-basis: 100%;
+}
+
+.det-inputrow2 .det-inputgp2{
+    flex-basis: 100%;
+}
+
+.det-inputrow3 .det-inputgp3{
+    flex-basis: 100%;
+}
+
+.det-inputrow4 .det-inputgp4{
+    flex-basis: 100%;
+}
+
+
+
+.detailscontainer input{
+    width: 95%;
+    /* border-radius: 15px; */
+    border: none;
+    border-bottom: 1px solid  #ccc;
+    /* border: ; */
+    color:rgb(104, 102, 102);
+    
+   
+}
+
+.detailscontainer select{
+    width: 100%;
+    /* border-radius: 15px;
+    border: 1px solid  #ccc; */
+    border: none;
+    border-bottom: 1px solid  #ccc;
+    color: rgb(104, 102, 102);;
+}
+
+.detailscontainer textarea{
+    /* border-radius: 15px; */
+    height: 50px;
+}
+
+ .detailscontainer{
+    background-color: rgb(255, 255, 255);
+    
+    flex: 0 0 48%;
+    padding-top: 32px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* border-radius: 10px; */
+}
+
+.enrollbtn{
+    background:#c94b4b ;
+        width: 100px;
+        border: none;
+        outline: none;
+        color: #fff;
+        height: 35px;
+        border-radius: 30px;
+        margin-top: 20px;
+        box-shadow: 0px 5px px 0px rgba(236, 135, 3, 0.3);
+}
+
+.enrollbtn:hover{
+    background: seagreen;
+}
+
+
+
+
+/* 2nd Part   plan benefitpart */
+
+ .ftrshead{
+
+
+font-size: 2.75rem;
+    text-align: center;
+
+}
+
+
+
+.planbenefitsection {
+    display: flex;
+    flex: 0.7 1;
+    background-image: linear-gradient(
+0deg
+,#f5f5fa,#fff7f1);
+    border-radius: 24px;
+    box-shadow: 0 3px 20px 0 hsl(0deg 0% 44% / 30%);
+    border: 1px solid #fd9644;
+    padding: 30px 52px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+
+.twoplanbenefitcontainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+.planbenefitcontainer {
+    flex: 1 0;
+}
+
+
+.planbenefittext {
+    font-size: 16px;
+    color: #000;
+}
+
+
+.planbenefitseparator {
+    background-color: #fd9644;
+    height: 1px;
+    width: 90%;
+    margin-top: 25px;
+}
+
